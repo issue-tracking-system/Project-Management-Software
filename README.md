@@ -1,5 +1,7 @@
 # ITS (Issue Tracking System)
 
+![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/cover.png "Logo Title Text 1")
+
 #### Fast, Clean, Responsive, Multilanguage, Email Syncing, etc.
 
 ITS (also trouble ticket system, support ticket, request management or incident ticket system) is a web based computer software, that manages and maintains lists of issues, as needed by an organization. Issue tracking systems are commonly used in an organization's customer support call center or development work tracking to create, update, and resolve reported customer/developer issues, or even issues reported by that organization's other employees.It also contains a knowledge base/wikipedia containing information on each customer, resolutions to common problems, and other such data. An issue tracking system is similar to a "bugtracker", and often, a software company will sell both, and some bugtrackers are capable of being used as an issue tracking system, and vice versa. Consistent use of an issue or bug tracking system is considered one of the "hallmarks of a good software team".
@@ -73,4 +75,14 @@ ITS (also trouble ticket system, support ticket, request management or incident 
 + a webserver (e.g. Apache or IIS)
 
 ### Screenshots
-
+![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/create-a-page.png "Logo Title Text 1")
+![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/create-a-ticket.png "Logo Title Text 1")
+![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/create-project-home-screen.png "Logo Title Text 1")
+![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/general-settings.png "Logo Title Text 1")
+![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/page-view.png "Logo Title Text 1")
+![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/ticket-view.png "Logo Title Text 1")
+![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/tickets-activity.png "Logo Title Text 1")
+![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/tickets-dashboard.png "Logo Title Text 1")
+![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/add-user.png "Logo Title Text 1")
+![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/currency_convertor.png "Logo Title Text 1")
+![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/publiclink_share1.png "Logo Title Text 1")
