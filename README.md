@@ -8,7 +8,7 @@ ITS (also trouble ticket system, support ticket, request management or incident 
 
 ### Installation
 + Upload files to your web server
-+ Import tables_default.sql to your database
++ Import DATABASE.sql to your database
 + Set database name, username, password for database to /inc/db.php
 + START USING IT!
 
