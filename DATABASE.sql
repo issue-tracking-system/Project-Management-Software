@@ -1,31 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 4.0.10deb1
--- http://www.phpmyadmin.net
---
--- Host: localhost
--- Generation Time: Sep 13, 2016 at 12:32 PM
--- Server version: 5.5.50-0ubuntu0.14.04.1
--- PHP Version: 5.5.9-1ubuntu4.19
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
---
--- Database: `issue-tracking-system1`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `accounts`
---
-
 CREATE TABLE IF NOT EXISTS `accounts` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `first_name` varchar(100) NOT NULL,
@@ -39,12 +11,6 @@ CREATE TABLE IF NOT EXISTS `accounts` (
   UNIQUE KEY `domain` (`domain`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `accounts_plans`
---
-
 CREATE TABLE IF NOT EXISTS `accounts_plans` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `for_account` int(10) unsigned NOT NULL,
@@ -57,12 +23,6 @@ CREATE TABLE IF NOT EXISTS `accounts_plans` (
   `to_date` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `comments`
---
 
 CREATE TABLE IF NOT EXISTS `comments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -79,12 +39,6 @@ CREATE TABLE IF NOT EXISTS `comments` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `connected_tickets`
---
-
 CREATE TABLE IF NOT EXISTS `connected_tickets` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `for_account` int(11) NOT NULL,
@@ -95,24 +49,12 @@ CREATE TABLE IF NOT EXISTS `connected_tickets` (
   UNIQUE KEY `tripleUnique` (`ticket_1`,`ticket_2`,`type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `currencies`
---
-
 CREATE TABLE IF NOT EXISTS `currencies` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `country` varchar(50) NOT NULL,
   `currency` varchar(5) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=116 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `custom_accounts_plans`
---
 
 CREATE TABLE IF NOT EXISTS `custom_accounts_plans` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -123,12 +65,6 @@ CREATE TABLE IF NOT EXISTS `custom_accounts_plans` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `default_language`
---
-
 CREATE TABLE IF NOT EXISTS `default_language` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `for_account` int(11) NOT NULL,
@@ -136,24 +72,12 @@ CREATE TABLE IF NOT EXISTS `default_language` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `login_image`
---
-
 CREATE TABLE IF NOT EXISTS `login_image` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `for_account` int(11) NOT NULL,
   `image` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `log_tickets`
---
 
 CREATE TABLE IF NOT EXISTS `log_tickets` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -166,12 +90,6 @@ CREATE TABLE IF NOT EXISTS `log_tickets` (
   `ticket_id` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='logs only for tickets' AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `log_wiki`
---
 
 CREATE TABLE IF NOT EXISTS `log_wiki` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -186,12 +104,6 @@ CREATE TABLE IF NOT EXISTS `log_wiki` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='logs only for tickets' AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `notifications`
---
-
 CREATE TABLE IF NOT EXISTS `notifications` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `for_account` int(11) NOT NULL,
@@ -202,12 +114,6 @@ CREATE TABLE IF NOT EXISTS `notifications` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `pass_resets`
---
-
 CREATE TABLE IF NOT EXISTS `pass_resets` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `for_account` int(11) NOT NULL,
@@ -216,12 +122,6 @@ CREATE TABLE IF NOT EXISTS `pass_resets` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `reset_code` (`reset_code`,`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `paused_trackings`
---
 
 CREATE TABLE IF NOT EXISTS `paused_trackings` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -232,12 +132,6 @@ CREATE TABLE IF NOT EXISTS `paused_trackings` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `priority_colors`
---
-
 CREATE TABLE IF NOT EXISTS `priority_colors` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `for_id` int(10) unsigned NOT NULL,
@@ -245,24 +139,12 @@ CREATE TABLE IF NOT EXISTS `priority_colors` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `professions`
---
-
 CREATE TABLE IF NOT EXISTS `professions` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `for_account` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `projects`
---
 
 CREATE TABLE IF NOT EXISTS `projects` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -275,12 +157,6 @@ CREATE TABLE IF NOT EXISTS `projects` (
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `saved_tracktimes`
---
-
 CREATE TABLE IF NOT EXISTS `saved_tracktimes` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `for_account` int(11) NOT NULL,
@@ -292,12 +168,6 @@ CREATE TABLE IF NOT EXISTS `saved_tracktimes` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `started_track_times`
---
-
 CREATE TABLE IF NOT EXISTS `started_track_times` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `for_account` int(11) NOT NULL,
@@ -308,12 +178,6 @@ CREATE TABLE IF NOT EXISTS `started_track_times` (
   `paused_on` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='currently working trackers for time' AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `sync_connections`
---
 
 CREATE TABLE IF NOT EXISTS `sync_connections` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -331,12 +195,6 @@ CREATE TABLE IF NOT EXISTS `sync_connections` (
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tickets`
---
 
 CREATE TABLE IF NOT EXISTS `tickets` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -368,12 +226,6 @@ CREATE TABLE IF NOT EXISTS `tickets` (
   KEY `status` (`status`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `ticket_priority`
---
-
 CREATE TABLE IF NOT EXISTS `ticket_priority` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
@@ -382,11 +234,6 @@ CREATE TABLE IF NOT EXISTS `ticket_priority` (
   UNIQUE KEY `name_unique` (`name`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `ticket_statuses`
---
 
 CREATE TABLE IF NOT EXISTS `ticket_statuses` (
   `id` tinyint(4) unsigned NOT NULL AUTO_INCREMENT,
@@ -395,12 +242,6 @@ CREATE TABLE IF NOT EXISTS `ticket_statuses` (
   UNIQUE KEY `name_unique` (`name`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `ticket_types`
---
-
 CREATE TABLE IF NOT EXISTS `ticket_types` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
@@ -408,11 +249,6 @@ CREATE TABLE IF NOT EXISTS `ticket_types` (
   UNIQUE KEY `name_unique` (`name`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -437,12 +273,6 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `email` (`email`,`for_account`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `watchers`
---
-
 CREATE TABLE IF NOT EXISTS `watchers` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `for_account` int(11) NOT NULL,
@@ -452,12 +282,6 @@ CREATE TABLE IF NOT EXISTS `watchers` (
   `start_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'time that is started watching',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `wiki_pages`
---
 
 CREATE TABLE IF NOT EXISTS `wiki_pages` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -474,12 +298,6 @@ CREATE TABLE IF NOT EXISTS `wiki_pages` (
   UNIQUE KEY `hash` (`hash`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `wiki_pages_updates`
---
-
 CREATE TABLE IF NOT EXISTS `wiki_pages_updates` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `for_account` int(11) NOT NULL,
@@ -492,12 +310,6 @@ CREATE TABLE IF NOT EXISTS `wiki_pages_updates` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `wiki_page_templates`
---
-
 CREATE TABLE IF NOT EXISTS `wiki_page_templates` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `for_account` int(11) NOT NULL,
@@ -507,12 +319,6 @@ CREATE TABLE IF NOT EXISTS `wiki_page_templates` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `nameAndID` (`name`,`for_account`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `wiki_spaces`
---
 
 CREATE TABLE IF NOT EXISTS `wiki_spaces` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -526,7 +332,3 @@ CREATE TABLE IF NOT EXISTS `wiki_spaces` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `key` (`key_space`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
