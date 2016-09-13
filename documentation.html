@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Ticket system documentation</title>
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="container">
+            <h2>Ticketing system Documentation</h2>
+            <p class="lead">
+                Here you can find Users Guide and Developer Documentation
+            </p>
+            <div class="alert alert-info">
+                <h4>Responsive documentaion</h4>
+                <p>This documentation describes working of application.</p>
+                <p>Select the required documentation from select menu below to move it top.</p>
+            </div>
+            <hr />
+
+            <div class="form-group">
+                <label for="sel1">Select section:</label>
+                <select class="form-control" id="show_control">
+                    <option value="users_guide">Users Guide</option>
+                    <option value="dev_docs">Developer Docs</option>
+                </select>
+            </div>
+
+            <div id="sectors">
+                <div class="panel panel-primary" id="users_guide">
+                    <div class="panel-heading">Users Guide</div>
+                    <div class="panel-body">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Default <sup>First installation options</sup></div>
+                            <div class="panel-body">
+                                <h4>Language:</h4>
+                                - English
+                                <h4>Login:</h4>
+                                <div><b>User:</b> Admin</div>
+                                <div><b>Pass:</b> Admin</div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">How To <sup>Step-By-Step</sup></div>
+                            <div class="panel-body">
+                                <b>Create projects:</b>
+                                <ol>
+                                    <li>Go to /home page</li>
+                                    <li>Click <i class="fa fa-plus-square"></i> icon at right top</li>
+                                    <li>Type name of project (<u>must have 3 or more symbols, only A-Za-z0-9_</u>)</li>
+                                    <li>Abbreviation will write automaticly, if you want you cant change it. Only letters, 3 symbols</li>
+                                    <li>Click Create button</li>
+                                </ol>
+
+                                <b>Edit projects:</b>
+                                <p><span class="glyphicon glyphicon-alert text-warning"></span> Projects can be edited from /home page and from /settings (there you must be administrator)</p>
+                                <ul>
+                                    <li>
+                                        Edit from home page (for not administrative users)
+                                        <ol>
+                                            <li>Go to /home page</li>
+                                            <li>Click <i class="fa fa-plus-square"></i> icon at right top</li>
+                                            <li>Choose the desired project</li>
+                                            <li>Change name or abbrevation</li>
+                                            <li>Click Create button</li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        Edit from settings page (only for administrative users)
+                                        <ol>
+                                            <li>Go to /settings page (from /home and <i class="fa fa-cog"></i> icon at top right)</li>
+                                            <li>Go to <b>Projects</b> link from left side menu</li>
+                                            <li>There you can Add, Edit, Delete projects</li>
+                                        </ol>
+                                    </li>
+                                </ul>
+
+                                <b>Selecting project for work:</b>
+                                <ol>
+                                    <li>Go to /home page</li>
+                                    <li>From select menu choose necessary project</li>
+                                    <li>There you can Add, Edit, Delete projects</li>
+                                    <li>Now links below will lead to tickets/wiki of this project</li>
+                                </ol>
+
+                                <b>Create new ticket:</b>
+                                <ol>
+                                    <li>Go to /home page</li>
+                                    <li>From select menu choose necessary project</li>
+                                    <li>Click tickets link below</li>
+                                    <li>Go to <b>New Issue</b> button</li>
+                                    <li>Type required fields (*)</li>
+                                    <li>Click <b>Create</b> button</li>
+                                </ol>
+
+                                <b>Edit ticket:</b>
+                                <ol>
+                                    <li>Go preview ticket</li>
+                                    <li>At top left side on ticket click Edit button</li>
+                                    <li>Make your changes</li>
+                                    <li>Click <b>Update</b> button</li>
+                                </ol>
+
+                                <b>Change ticket status:</b>
+                                <p>Ticket statuses can be changed from dashboard with 'tow', from ticket preview or when edit ticket</p>
+
+                                <b>Usage of tracking system</b>
+                                <ol>
+                                    <li>Go to preview some ticket</li>
+                                    <li>At right side on resolution > 767 and the bottom at resolution < 767 is tracking system</li>
+                                    <li>From <span class="glyphicon glyphicon-play"></span> button tracking will be started and timer for this ticket will go top of page when refresh</li>
+                                    <li>Time lowest from 1 minute cant be saved</li>
+                                    <li>From <span class="glyphicon glyphicon-plus"></span> button you can add times</li>
+                                </ol>
+
+                                <b>Create wiki space</b>
+                                <ol>
+                                    <li>Go to /home page</li>
+                                    <li>From select menu choose necessary project</li>
+                                    <li>Click wiki link below</li>
+                                    <li>Click <b>Spaces</b> list at top of page</li>
+                                    <li>Click link at bottom <b>Create new one!</b></li>
+                                    <li>Type required fileds</li>
+                                    <li>Click <b>Create</b> button</li>
+                                </ol>
+
+                                <b>Create wiki page</b>
+                                <ol>
+                                    <li>Go to /home page</li>
+                                    <li>From select menu choose necessary project</li>
+                                    <li>Click wiki link below</li>
+                                    <li>Click <b>Create</b> button at top of page</li>
+                                    <li>Choose space that project will go</li>
+                                    <li>Type parent page for your page (your page will be child of..) (not required)</li>
+                                    <li>Choose template if you want..</li>
+                                    <li>Click <b>Next</b> button</li>
+                                    <li>Type name of your page</li>
+                                    <li>Click <b>Create</b> and update page content if you need.</li>
+                                </ol>
+
+                                <b>Create wiki template for pages</b>
+                                <ol>
+                                    <li>Go to /home page</li>
+                                    <li>Go to /settings page (from /home and <i class="fa fa-cog"></i> icon at top right)</li>
+                                    <li>Click <b>Wiki Templates</b> from right side menu</li>
+                                    <li>Manage your templates</li>
+                                </ol>
+
+                                <b>Manage users</b>
+                                <ol>
+                                    <li>Go to /home page</li>
+                                    <li>Go to /settings page (from /home and <i class="fa fa-cog"></i> icon at top right)</li>
+                                    <li>Click <b>Profiles</b> from right side menu</li>
+                                    <li>Manage your users</li>
+                                </ol>
+
+                                <b>Change default site language<sup>You have option to chenge it for every user individually!</sup></b>
+                                <ol>
+                                    <li>Go to /settings</li>
+                                    <li>Open 'General' page</li>
+                                    <li>Select your language</li>
+                                    <li>Save</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Privileges</div>
+                            <div class="panel-body">
+                                <b>Users privileges types</b>
+                                <ul>
+                                    <li>Admin
+                                        <ul>
+                                            <li>Can manage everything in system</li>
+                                        </ul>
+                                    </li>
+                                    <li>Super User
+                                        <ol>
+                                            <li>Can manage all tickets</li>
+                                            <li>Add new spaces</li>
+                                            <li>Add new pages</li>
+                                            <li>Edit all pages</li>
+                                            <li>Delete all pages</li>
+                                            <li>Move all pages</li>
+                                        </ol>
+                                    </li>
+                                    <li>User
+                                        <ol>
+                                            <li>Add/Edit only tickets added by me or assigned to me</li>
+                                            <li>Add/Edit mine pages</li>
+                                        </ol>
+                                    </li>
+                                    <li>Watcher
+                                        <ol>
+                                            <li>Can't make nothing changes!</li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-primary" id="dev_docs">
+                    <div class="panel-heading">Developers Documentation</div>
+                    <div class="panel-body">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Hardcoded</div>
+                            <div class="panel-body">
+                                <span class="glyphicon glyphicon-alert text-danger"></span> In table <b>ticket_statuses</b> status <b>Closed</b> must be with <span class="bg-danger">#4</span>! 
+                                This is hardcoded in <span class="bg-danger">class Database</span>, method <span class="bg-danger">setTicket</span>
+                                bacause when ticket is move to status Closed, the ID for this status should be taken.
+                                <br><br>
+                                <span class="glyphicon glyphicon-alert text-danger"></span> Privileges are set in <b>inc/config.php</b>. Their numbers are cardcoded!
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Plugins/Libraries</div>
+                            <div class="panel-body">
+                                <p><span class="glyphicon glyphicon-alert text-success"></span> Generation of passwords is with <b><a href="https://github.com/dropbox/zxcvbn" target="_blank">zxcvbn</a></b> password generator (more powerful than google generator)</p>
+                                <p><span class="glyphicon glyphicon-alert text-success"></span> Textarea editor (for ticket description and pages content) is <b><a href="http://ckeditor.com/" target="_blank">CKEditor</a></b></p>
+                                <p><span class="glyphicon glyphicon-alert text-success"></span> Create interactive charts easily for your web projects <b><a href="http://www.highcharts.com/" target="_blank">Highcharts</a></b></p>
+                                <p><span class="glyphicon glyphicon-alert text-success"></span> For select menu design is used <b><a href="https://silviomoreto.github.io/bootstrap-select/" target="_blank">Bootstrap-select</a></b></p>
+                                <p><span class="glyphicon glyphicon-alert text-success"></span> Responsive design is with <b><a href="http://getbootstrap.com/" rel="nofollow" target="_blank">Bootstrap</a></b></p>
+                                <p><span class="glyphicon glyphicon-alert text-success"></span> For special symbols are used <b><a href="https://fortawesome.github.io/Font-Awesome/icons/" target="_blank">Font-Awesome Icons</a> and Bootstrap Glyphicons</b></p>
+                                <p><span class="glyphicon glyphicon-alert text-success"></span> For date callendar is used <b><a href="https://bootstrap-datepicker.readthedocs.org/en/latest/" target="_blank">Bootstrap-Datepicker Plugin</a></b></p>
+                                <p><span class="glyphicon glyphicon-alert text-success"></span> <b><a href="http://jquery.com/" target="_blank">JQuery</a></b> is mandatory..</p>
+                                <p><span class="glyphicon glyphicon-alert text-success"></span> <b><a href="https://github.com/PHPMailer/PHPMailer" target="_blank">PHPMailer</a></b> Class</p>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Code structure</div>
+                            <div class="panel-body">
+                                <ul>
+                                    <li><i class="fa fa-folder-open-o"></i> _html_parts <sup>(all pages)</sup>
+                                        <ul>
+                                            <li><i class="fa fa-folder-open-o"></i> error_codes
+                                                <ul>
+                                                    <li><i class="fa fa-file-code-o"></i> 403.php <sup>(when system return 403)</sup></li>
+                                                    <li><i class="fa fa-file-code-o"></i> 404.php <sup>(when system return 404)</sup></li>
+                                                </ul>
+                                            </li>
+                                            <li><i class="fa fa-folder-open-o"></i> tickets <sup>(all pages for tickets section)</sup>
+                                                <ul>
+                                                    <li><i class="fa fa-file-code-o"></i> activity.php <sup>(home page of tickets section)</sup></li>
+                                                    <li><i class="fa fa-file-code-o"></i> dashboard.php <sup>(dashboard page in tickets section)</sup></li>
+                                                    <li><i class="fa fa-file-code-o"></i> newissue.php <sup>(new issue page in tickets section)</sup></li>
+                                                    <li><i class="fa fa-file-code-o"></i> view.php <sup>(ticket preview page)</sup></li>
+                                                </ul>
+                                            </li>
+                                            <li><i class="fa fa-folder-open-o"></i> wiki <sup>(all pages for wiki section)</sup>
+                                                <ul>
+                                                    <li><i class="fa fa-file-code-o"></i> createspace.php <sup>(create page of wiki section)</sup></li>
+                                                    <li><i class="fa fa-file-code-o"></i> display.php <sup>(wiki spaces and pages preview)</sup></li>
+                                                    <li><i class="fa fa-file-code-o"></i> editpage.php <sup>(page for editpages)</sup></li>
+                                                    <li><i class="fa fa-file-code-o"></i> home.php <sup>(home page with activity of wiki)</sup></li>
+                                                    <li><i class="fa fa-file-code-o"></i> public_preview.php <sup>(public preview page with hash for wiki pages)</sup></li>
+                                                </ul>
+                                            </li>
+                                            <li><i class="fa fa-file-code-o"></i> exeption_page.php <sup>(this page is open when website return exeption)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> down.php <sup>(when system get php error)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> footer.php <sup>(footer part of site)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> header.php <sup>(header part of site)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> home.php <sup>(site home page when are logged)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> login.php <sup>(login page)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> logout.php <sup>(logout redirection)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> profile.php <sup>(profile view)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> settings.php <sup>(General settings page)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> tickets.php <sup>(tickets main page)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> wiki.php <sup>(wiki main page)</sup></li>
+                                        </ul>
+                                    </li>
+                                    <li><i class="fa fa-folder-open-o"></i> ajax <sup>Ajax called files</sup>
+                                        <ul>
+                                            <li><i class="fa fa-file-code-o"></i> activity.php <sup>(get activity from Show More button in home page of tickets)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> activity_settings.php <sup>(get activity from Show More button in home page of settings)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> activity_wiki.php <sup>(get activity from Show More button in home page of wiki)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> add_project.php <sup>(calls when add project from home page)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> assigntome.php <sup>(when click assign to me button in ticket preview)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> dashboard.php <sup>(this change ticket statuses when move tickets in dashboard)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> getspaceinfo.php <sup>(this return space information when edit from settings page)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> gettemplateinfo.php <sup>(this return template information when edit from settings page)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> getuserinfo.php <sup>(this return user information when edit from settings page)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> notifications_tickets.php <sup>(this return notifications for tickets section)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> notifications_wiki.php <sup>(this return notifications for wiki section)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> page_move.php <sup>(when move some page from their preview)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> parent_suggestions.php <sup>(when create new page this get parent variants if you want to be child)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> resetemail.php <sup>(this calls when somebody reset his password from login page)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> settings_search.php <sup>(return results from settings page, top search field)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> space_key_check.php <sup>(when create new space from settings or wiki section, this checks space key is free)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> tracker.php <sup>(this manage tracker /start,stop,pause,clear/ events from ticket preview)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> watchers.php <sup>(delete and add when somebody click to watch ticket or wikipage)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> wiki_search.php <sup>(return results when somebody type in wiki search)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> getsyncmailinfo.php <sup>(return information for sync email options)</sup></li>
+                                            <li><i class="fa fa-file-code-o"></i> sync_conn_check.php <sup>(work with PHPMailer Class. Test connection of email for sync)</sup></li>
+                                        </ul>
+                                    </li>
+                                    <li><i class="fa fa-folder-open-o"></i> assets <sup>Design for system</sup>
+                                        <ul>
+                                            <li><i class="fa fa-folder-open-o"></i> bootstrap-select-* <sup>Bootstrap Select plugin</sup>
+                                            <li><i class="fa fa-folder-open-o"></i> css <sup>css files</sup>
+                                            <li><i class="fa fa-folder-open-o"></i> fonts <sup>fonts</sup>
+                                            <li><i class="fa fa-folder-open-o"></i> imgs <sup>images</sup>
+                                            <li><i class="fa fa-folder-open-o"></i> js <sup>javascript files</sup>
+                                        </ul>
+                                    </li>
+                                    <li><i class="fa fa-folder-open-o"></i> classes <sup>Classes of system</sup>
+                                        <ul>
+                                            <li><i class="fa fa-folder-open-o"></i> PHPMailer <sup>The <a href="https://github.com/PHPMailer/PHPMailer"><i class="fa fa-link" aria-hidden="true"></i>PHPMailer</a> Class</sup>
+                                            <li><i class="fa fa-file-code-o"></i> class.imap.php <sup>Here are methods who fetch emails from given email box.</sup>
+                                            <li><i class="fa fa-file-code-o"></i> class.database.php <sup>Database Class with all queries to mysql class</sup>
+                                            <li><i class="fa fa-file-code-o"></i> class.main.php <sup>Main Class loading all other classes, settings files and manage page loadings</sup>
+                                            <li><i class="fa fa-file-code-o"></i> class.mysql.php <sup>Mysql Class is database connector and here is debug mode array with queries</sup>
+                                        </ul>
+                                    </li>
+                                    <li><i class="fa fa-folder-open-o"></i> inc <sup>Options for system</sup>
+                                        <ul>
+                                            <li><i class="fa fa-file-code-o"></i> config.php <sup>Configurations of site /permissions, default images, used regular expressions/</sup>
+                                            <li><i class="fa fa-file-code-o"></i> db.php <sup>Database connection settings /user, password, host/</sup>
+                                            <li><i class="fa fa-file-code-o"></i> helpers.php <sup>Helpful function for website /base_url, redirect, etc./</sup>
+                                            <li><i class="fa fa-file-code-o"></i> settings.php <sup>Some basic settings for system /maximum number notifications, date types, allowed chars for pass generator, etc./</sup>
+                                        </ul>
+                                    </li>
+                                    <li><i class="fa fa-folder-open-o"></i> lang <sup>Site Languages</sup>
+                                        <ul>
+                                            <li><i class="fa fa-folder-open-o"></i> lang_EN.php <sup>default language</sup>
+                                            <li><i class="fa fa-folder-open-o"></i> lang_EN.js <sup>default language</sup>
+                                        </ul>
+                                    </li>
+                                    <li><i class="fa fa-folder-open-o"></i> Crons <sup>Files for cron jobs</sup>
+                                    <li><i class="fa fa-folder-open-o"></i> Logs <sup>There are log files in this folder</sup>
+                                    <li><i class="fa fa-folder-open-o"></i> templates <sup>Templates for system</sup>
+                                        <ul>
+                                            <li><i class="fa fa-file-code-o"></i> activitystream.php <sup>Template html for activity stream in wiki, tickets and settings</sup>
+                                            <li><i class="fa fa-file-code-o"></i> list_users.php <sup>Template html for users list in settings and profile->list users</sup>
+                                        </ul>
+                                    </li>
+                                    <li><i class="fa fa-file-code-o"></i> .htaccess</li>
+                                    <li><i class="fa fa-file-code-o"></i> documentation.html</li>
+                                    <li><i class="fa fa-file-code-o"></i> index.php</li>
+                                    <li><i class="fa fa-file-code-o"></i> tables_default.sql</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Debug Mode</div>
+                            <div class="panel-body">
+                                <p><span class="glyphicon glyphicon-alert text-success"></span> The system have debug mode. When php constant <i>DEBUG_MODE</i> in <b>/inc/settings.php</b> is set to <i>TRUE</i> at the bottom of the page are displayed all mysql queries. Redirects doesnt work and php repording all errors!</p>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Multi Language</div>
+                            <div class="panel-body">
+                                <p><span class="glyphicon glyphicon-alert text-info"></span> To create a new language must create files <b>.js</b> and <b>.php</b> in <i>/lang</i> directory in the required format(you can see it in the original files)..</p>
+                                <p><span class="glyphicon glyphicon-alert text-info"></span> The array(property) <b>lang_php</b> in Class Main keeps all words in lang_ABBR.php file. Words in array are called from files. lang_ABBR.js is loaded from header and words are pasted in javascripts from loaded object.</p>
+                                <p><span class="glyphicon glyphicon-alert text-info"></span> ABBR name in js and php files must are with UPPERCASE!</p>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Sync email account</div>
+                            <div class="panel-body">
+                                <p><span class="glyphicon glyphicon-alert text-info"></span> To sync email account just set parameters on settings page or when create project from home page</p>
+                                <p><span class="glyphicon glyphicon-alert text-info"></span> To fetch emails from mail account must set <b>cron job</b> for file <b>crons/fetch_imap.php</b>. For every call, fetch_imap will loop all projects and will get their connections and fetch emails for him.</p>
+                                <p><span class="glyphicon glyphicon-alert text-info"></span> Fetching emails is with php/imap, sending emails is with <a href="https://github.com/PHPMailer/PHPMailer"><i class="fa fa-link" aria-hidden="true"></i>PHPMailer</a> Class, he is loaded from sendEmal method in Main Class, there you can manage options of PHPMailer.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- #sectors -->
+        </div><!-- .container -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#show_control").change(function () {
+                    $("#" + $(this).val()).prependTo("#sectors");
+                });
+            });
+        </script>
+    </body>
+</html>
