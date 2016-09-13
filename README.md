@@ -1,6 +1,6 @@
 # ITS (Issue Tracking System)
 
-![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/cover.png "Logo Title Text 1")
+![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/cover.png "Cover")
 
 #### Fast, Clean, Responsive, Multilanguage, Email Syncing, etc.
 
