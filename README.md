@@ -18,6 +18,13 @@ ITS (also trouble ticket system, support ticket, request management or incident 
 + Set database name, username, password for database to /inc/db.php
 + START USING IT!
 
+### Used technologies 
++ PHP
++ HTML5
++ CSS3
++ JavaScript
++ MYSQL
+
 ### Features
 + Twitter Bootstrap v3.3.6
 + CKEditor 4.5.6
@@ -72,6 +79,7 @@ ITS (also trouble ticket system, support ticket, request management or incident 
 + Price per hour  - tracking worked time and costs to date for all hours.
 + Currency convertor at real time with values from google
 + ETC..!
++ Cron job for tething emails from email server
 
 ### Requirements
 + MySQL 4.1.1+
