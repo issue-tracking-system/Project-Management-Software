@@ -26,7 +26,7 @@ ITS (also trouble ticket system, support ticket, request management or incident 
 + MYSQL
 
 ### Features
-+ Twitter Bootstrap v3.3.6
++ Twitter Bootstrap v3.3.7
 + CKEditor 4.5.6
 + Datepicker for Bootstrap v1.6.0
 + bootstrap-select v1.10.0
