@@ -11,6 +11,7 @@ ITS (also trouble ticket system, support ticket, request management or incident 
 *It comes with easy users guide and developer documentation.*
 
 *Translated into:* ![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/gr_flag.jpg "Cover")  ![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/bg_flag.jpg "Cover")  ![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/en_flag.jpg "Cover")
+![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/fr_flag.jpg "Cover")
 
 ### Installation
 + Upload files to your web server
@@ -37,7 +38,7 @@ ITS (also trouble ticket system, support ticket, request management or incident 
 + PHPMailer
 
 ### More:
-+ MULTI LANGUAGE (EN, BG, DE are included, easy can add another one, just learn how in dev documentation!)
++ MULTI LANGUAGE (EN, BG, DE, FR are included, easy can add another one, just learn how in dev documentation!)
 + Error log
 + RESPONSIVE DESIGN
 + Email synchronization for tickets!!
