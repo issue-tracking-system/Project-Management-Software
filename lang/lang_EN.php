@@ -243,6 +243,7 @@ $LANG = array(
     'new_space' => 'New Space',
     'page_not_found' => 'Page Not Found',
     'page_was_deleted' => 'Page was deleted',
+    'page_was_updated' => 'Page was updated',
     'space_shortcuts' => 'Space shortcuts',
     'page_tree' => 'Page Tree',
     'share' => 'Share',
@@ -343,6 +344,7 @@ $LANG = array(
     'add_issue_link' => 'Connect with ticket',
     'find_by_word' => 'Find by subject',
     'recent_projects' => 'Recent projects',
-    'current_project' => 'Current project'
+    'current_project' => 'Current project',
+    'page_update_error' => 'Page update error. Are you sure that you have typed more than 3 characters in title?'
 );
 ?>

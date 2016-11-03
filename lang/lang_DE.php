@@ -243,6 +243,7 @@ $LANG = array(
     'new_space' => 'Neues Raum',
     'page_not_found' => 'Seite nicht gefunden',
     'page_was_deleted' => 'Seite wurde gelöscht',
+    'page_was_updated' => 'Seite wurde aktualisiert',
     'space_shortcuts' => 'Räumeabkürzungen',
     'page_tree' => 'Seitebaum',
     'share' => 'Teilen',
@@ -343,6 +344,7 @@ $LANG = array(
     'add_issue_link' => 'Kontakt mit Ticket',
     'find_by_word' => 'finden Wort',
     'recent_projects' => 'Letzte Projekte',
-    'current_project' => 'derzeitiges Projekt'
+    'current_project' => 'derzeitiges Projekt',
+    'page_update_error' => 'Seite Update-Fehler. Sind Sie sicher, dass Sie mehr als 3 Zeichen in Titel eingegeben haben?'
 );
 ?>

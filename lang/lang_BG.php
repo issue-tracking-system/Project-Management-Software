@@ -243,6 +243,7 @@ $LANG = array(
     'new_space' => 'Нов Space',
     'page_not_found' => 'Страницата не е намерена',
     'page_was_deleted' => 'Страницата е изтрита',
+    'page_was_updated' => 'Страницата е обновена',
     'space_shortcuts' => 'Space кратки пътища',
     'page_tree' => 'Дърво на страниците',
     'share' => 'Сподели',
@@ -343,6 +344,7 @@ $LANG = array(
     'add_issue_link' => 'Свържи с тикет',
     'find_by_word' => 'Намери по заглавие',
     'recent_projects' => 'Последни проекти',
-    'current_project' => 'Текущ проект'
+    'current_project' => 'Текущ проект',
+    'page_update_error' => 'Проблем с публикуването. Сигурни ли сте, че сте въвели повече от 3 символа в заглавието?'
 );
 ?>

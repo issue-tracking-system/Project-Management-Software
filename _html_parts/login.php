@@ -65,7 +65,7 @@ if (!isset($_GET['reset_code'])) {
                                             <label><input type="checkbox" value="remember-me" name="remember"><?= $this->lang_php['remember_me'] ?></label>
                                         </div>
                                         <div class="form-group">
-                                            <input type="submit" class="btn btn-lg btn-primary btn-block" name="signin" value="<?= $this->lang_php['sign_in'] ?>">
+                                            <input type="submit" class="btn btn-lg btn-primary btn-block blue-gradient" name="signin" value="<?= $this->lang_php['sign_in'] ?>">
                                         </div>
                                     </div>
                                 </div>

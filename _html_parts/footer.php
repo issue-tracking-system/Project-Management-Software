@@ -4,9 +4,9 @@ if (!defined('APPLICATION_LOADED') || !APPLICATION_LOADED) {
 }
 if (isset($_SESSION['logged']) || isset($_COOKIE['logged'])) {
     ?>
-    <footer>
+    <footer class="blue-gradient">
         <div>
-            <a href="http://eccfze.ae" target="_blank">AdvertisingCC</a> Project Management Software  
+            Project Management Software  
             &middot;
             <a href="http://pmticket.com/support-of-online-project-issue-management-system" target="_blank">Report a Bug <i class="fa fa-bug" aria-hidden="true"></i></a>
         </div>

@@ -139,6 +139,11 @@ CREATE TABLE IF NOT EXISTS `priority_colors` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
+INSERT INTO `priority_colors` (`id`, `for_id`, `color`) VALUES
+(1, 2, '#009933'),
+(2, 3, '#e60000'),
+(3, 1, '#e0e0d1');
+
 CREATE TABLE IF NOT EXISTS `professions` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `for_account` int(11) NOT NULL,
@@ -234,6 +239,10 @@ CREATE TABLE IF NOT EXISTS `ticket_priority` (
   UNIQUE KEY `name_unique` (`name`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
+INSERT INTO `ticket_priority` (`id`, `name`, `power`) VALUES
+(1, 'Low', 3),
+(2, 'Normal', 2),
+(3, 'High', 1);
 
 CREATE TABLE IF NOT EXISTS `ticket_statuses` (
   `id` tinyint(4) unsigned NOT NULL AUTO_INCREMENT,
@@ -242,6 +251,13 @@ CREATE TABLE IF NOT EXISTS `ticket_statuses` (
   UNIQUE KEY `name_unique` (`name`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
+INSERT INTO `ticket_statuses` (`id`, `name`) VALUES
+(4, 'Closed'),
+(3, 'In Progress'),
+(1, 'New'),
+(5, 'Rejected'),
+(2, 'To Do');
+
 CREATE TABLE IF NOT EXISTS `ticket_types` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
@@ -249,6 +265,11 @@ CREATE TABLE IF NOT EXISTS `ticket_types` (
   UNIQUE KEY `name_unique` (`name`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
+INSERT INTO `ticket_types` (`id`, `name`) VALUES
+(1, 'Bug'),
+(2, 'Feature'),
+(3, 'Support'),
+(4, 'Task');
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -272,6 +293,9 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `username` (`username`,`for_account`),
   UNIQUE KEY `email` (`email`,`for_account`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+INSERT INTO `users` (`id`, `for_account`, `username`, `password`, `fullname`, `email`, `image`, `prof`, `registered`, `last_login`, `last_active`, `dash_filter`, `social`, `projects`, `email_notif`, `lang`, `privileges`) VALUES
+(1, 1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Demonstration Account', 'admin@pmticket.com', NULL, 1, 1467721962, 1477637142, 1477599995, '', '', ',3', 0, NULL, '1,2,3,4,5,6,7,8,9'); 
 
 CREATE TABLE IF NOT EXISTS `watchers` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -319,6 +343,10 @@ CREATE TABLE IF NOT EXISTS `wiki_page_templates` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `nameAndID` (`name`,`for_account`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+
+INSERT INTO `wiki_page_templates` (`id`, `for_account`, `name`, `content`, `default_r`) VALUES
+(9, 1, 'Blank Page', '', 0),
+(10, 1, 'How-to article', '<ol><li></li></ol>', 0);
 
 CREATE TABLE IF NOT EXISTS `wiki_spaces` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,

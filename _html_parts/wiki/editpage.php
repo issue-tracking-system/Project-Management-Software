@@ -7,8 +7,12 @@ if(isset($_POST['updatepage'])) {
     $space = $_POST['space'];
     unset($_POST['space']);
     $inserted_id = $this->updateWikiPage($_POST);
-    $this->set_alert('Page was updated!', 'success');
-    if(!isset($_POST['firstedit'])) {
+    if($inserted_id == false) {
+        $this->set_alert($this->lang_php['page_update_error'], 'danger');
+    } else {
+        $this->set_alert($this->lang_php['page_was_updated'], 'success');
+    }
+    if(!isset($_POST['firstedit']) && $inserted_id != false) {
         $this->setWikiLog($this->user_id, $this->project_id, $this->lang_php['update_page'], url_segment(3), $space, $inserted_id);
     }
     if(url_segment(3)) {

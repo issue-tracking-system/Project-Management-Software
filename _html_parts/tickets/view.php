@@ -578,265 +578,30 @@ if (url_segment(3) == false || $result == false) {
 }
 ?>
 <script>
-    //status change
-    var tid = <?= $result['ticket_id'] ?>;
-    var closedid = '<?= $closedid ?>';
-
-    function changeStatus(ticket_id, to_status_id) {
-        $.ajax({
-            type: "POST",
-            url: "<?= base_url('dashboard') ?>",
-            data: {ticketid: ticket_id, tostatusid: to_status_id, userid:<?= $this->user_id ?>, projectid:<?= $this->project_id ?>}
-        }).done(function (data) {
-            if (data == 0) {
-                alert(lang.dash_save_status_err);
-            } else {
-                $(".changed").fadeIn(500).delay(2000).fadeOut(500);
-            }
-        });
-    }
-    $('#status').on('change', function () {
-        changeStatus(tid, $(this).val());
-        if ($("#status option:selected").val() == 4) {
-            $('.close-ticket-btn').addClass('disabled');
-        } else {
-            $('.close-ticket-btn').removeClass('disabled');
-        }
-    });
-
-    $('.close-ticket-btn').on('click', function () {
-        changeStatus(tid, closedid);
-        window.location = "<?= base_url($this->url . '/dashboard') ?>";
-    });
-    //comments
-    function load_cke() {
-        if ($("#cke_comment")) {
-            $("#cke_comment").remove();
-        }
-        var hEd = CKEDITOR.instances['comment'];
-        if (hEd) {
-            CKEDITOR.remove(hEd);
-        }
-        CKEDITOR.replace('comment');
-    }
-    function clearLikeFirstUse() {
-        $("[name='timeupdated']").val(0);
-        $("[name='id']").val(0);
-        $("[name='sub_for']").val(0);
-        $('.cancel-edit').hide();
-    }
-    $('.reply').click(function () {
-        $('a[href="#add-comment"]').tab('show');
-        $('.cancel-edit').show();
-        $('#comment').val('');
-        var into = $(this).attr('data-subfor-id');
-        $("[name='sub_for']").val(into);
-    });
-    $('.edit').click(function () {
-        load_cke();
-        $('.cancel-edit').show();
-        $('a[href="#add-comment"]').tab('show');
-        var unique_id = $(this).attr('data-unique-id');
-        var sub_for = $(this).attr('data-subfor-id');
-
-        $("[name='sub_for']").val(sub_for);
-        $("[name='timeupdated']").val(1);
-        $("[name='id']").val(unique_id);
-
-        var html = $(this).prevAll("div.media-comment").first().html();
-        $('#comment').val(html);
-    });
-    $('.cancel-edit, [href="#comments-users"]').click(function () {
-        $('a[href="#comments-users"]').tab('show');
-        clearLikeFirstUse();
-        $('#comment').val('');
-        load_cke();
-    });
-    //tracker
-    function tracker(event) {
-        $.ajax({
-            type: "POST",
-            url: "<?= base_url('tracker') ?>",
-            data: {status: event, ticket_id: <?= $result['id'] ?>, user_id: <?= $this->user_id ?>, project_id:<?= $this->project_id ?>}
-        }).done(function (data) {
-            var arr = JSON.parse(data);
-            if (arr.error) {
-                $(".the-tracker p.track-msg").text(arr.error).show().delay(5000).fadeOut();
-            } else if (arr.success) {
-                location.reload();
-            }
-        });
-    }
-    $("[name='adddate']").click(function () {
-        if ($(this).is(':checked'))
-            $('.adddatefield').show();
-        else
-            $('.adddatefield').hide();
-        $('.date-pick').val('');
-    });
-    var needStop = false;
-    function tracktimer(value) {
-        if (value == 'start') {
-            if (needStop) {
-                needStop = false;
-                return;
-            }
-            int_s = parseInt($('.s').text()) + 1;
-            int_m = parseInt($('.m').text());
-            int_h = parseInt($('.h').text());
-            int_d = parseInt($('.d').text());
-            if (int_s >= 60) {
-                int_s = 1;
-                int_m = int_m + 1;
-                if (int_m >= 60) {
-                    int_m = 0;
-                    int_h = int_h + 1;
-                    if (int_h >= 24) {
-                        int_h = 0;
-                        int_d = int_d + 1;
-                    }
-                }
-            }
-            $('.s').text(int_s);
-            $('.m').text(int_m);
-            $('.h').text(int_h);
-            $('.d').text(int_d);
-            setTimeout(tracktimer, 1000, value);
-        }
-    }
-    tracktimer('<?= isset($track_stat) ? $track_stat : '' ?>');
-
-    function changeNumberTimersText() {
-        var num_started = $('a[data-timer-indicator]').length;
-        if (num_started > 0) {
-            $('div.started-timers p.text-center').text(lang.you_have + ' ' + num_started + ' ' + lang.active_timer + ' ');
-        } else {
-            $('div.started-timers p.text-center').text(lang.you_dont_have_active_timers + ' ');
-        }
-    }
-
-    $('.the-tracker .track-event').click(function () {
-        if ($(this).hasClass("disabled") || $(this).hasClass("active")) {
-            return;
-        }
-        var tr_event = $(this).attr('data-track-event');
-        if (tr_event == 'stop') {
-            var you_sure_stop = confirm('<?= $this->lang_php['stop_and_save_time'] ?>');
-            if (!you_sure_stop) {
-                return;
-            }
-        }
-        if (tr_event == 'clear') {
-            var you_sure_clear = confirm('<?= $this->lang_php['clear_worked_time'] ?>');
-            if (!you_sure_clear) {
-                return;
-            }
-
-        }
-        if (typeof you_sure_clear != 'undefined' || typeof you_sure_stop != 'undefined') {
-            $('.track-event').addClass('disabled');
-            $('[data-track-event="start"]').removeClass('disabled');
-            $('.s, .h, .m, .d').text('0');
-        }
-        tracker(tr_event);
-        tracktimer(tr_event);
-        if (tr_event != 'start') {
-            needStop = true;
-        }
-        $('.track-event').removeClass('active');
-        if (tr_event == 'start' || tr_event == 'pause') {
-            $(this).addClass('active');
-        }
-        if (tr_event == 'start') {
-            $('.track-event').removeClass('disabled');
-            if (!$('[data-timer-indicator="<?= $this->project_abbr . '-' . $result['ticket_id'] ?>"]').length) {
-                $('.started-timers').append('<a href="<?= base_url($this->url . '/view/' . $this->project_abbr . '-' . $result['ticket_id']) ?>" data-toggle="tooltip" title="' + lang.started_on + ' <?= date(TICKETS_DATE_TYPE, time()) ?>, ' + lang.current_status + lang.start + '" class="btn btn-sq-sm btn-warning" data-timer-indicator="<?= $this->project_abbr . '-' . $result['ticket_id'] ?>"><i class="glyphicon glyphicon-time"></i><div class="text-center"><?= $this->project_abbr . '-' . $result['ticket_id'] ?></div></a>');
-            }
-            changeNumberTimersText();
-        }
-
-        if (tr_event == 'stop' || tr_event == 'clear') {
-            $('[data-timer-indicator="<?= $this->project_abbr . '-' . $result['ticket_id'] ?>"]').remove();
-            changeNumberTimersText();
-        }
-    });
-
-    function watcher(status) {
-        $.ajax({
-            type: "POST",
-            url: "<?= base_url('watchers') ?>",
-            data: {status: status, u_id: <?= $this->user_id ?>, t_id:<?= $result['id'] ?>}
-        }).done(function (data) {
-            if (data == 0) {
-                alert(lang.watchers_problem);
-            }
-        });
-    }
-
-    function assignToMe() {
-        var my_name = '<?= $this->fullname ?>';
-        $.ajax({
-            type: "POST",
-            url: "<?= base_url('assigntome') ?>",
-            data: {ticket_id:<?= $result['id'] ?>, assigntome: <?= $this->user_id ?>}
-        }).done(function (data) {
-            if (data != 0) {
-                $(".assigned").empty().append(my_name);
-            } else {
-                alert(lang.ajax_err);
-            }
-        });
-    }
-
-    $(document).ready(function () {
-        CKEDITOR.replace('comment');
-        $('.date-pick').datepicker({
-            calendarWeeks: true,
-            autoclose: true,
-            todayHighlight: true,
-            format: 'dd.mm.yyyy'
-        });
-        $('#watch-status').click(function () {
-            var text = $(this).text();
-            if (text == '<?= $this->lang_php['unwatch'] ?>') {
-                var str = $("#watchers-list").text();
-                var res = str.split(",");
-                var index = res.indexOf("<?= $this->fullname ?>");
-                res.splice(index, 1);
-                $("#watchers-list").text(res);
-                $(this).text('<?= $this->lang_php['watch'] ?>');
-                watcher('delete');
-            } else if (text == '<?= $this->lang_php['watch'] ?>') {
-                var str = $("#watchers-list").text();
-                var res = str.split(",");
-                var index = res.indexOf("");
-                if (index >= 0) {
-                    res.splice(index, 1);
-                }
-                res.push("<?= $this->fullname ?>");
-                $("#watchers-list").text(res);
-                $(this).text('<?= $this->lang_php['unwatch'] ?>');
-                watcher('add');
-            }
-        });
-    });
-
-    function currency_ajax_convert(sum) {
-        var from = '<?= $result['pph_c'] ?>';
-        var to = $('#select_cur').val();
-        $(".loading-conv").show();
-        $.ajax({
-            type: "POST",
-            url: "<?= base_url('currency_convertor') ?>",
-            data: {sum: sum, from: from, to: to}
-        }).done(function (data) {
-            $(".loading-conv").hide();
-            $("#new_currency").empty().append(data);
-        });
-    }
-
-    $('#modalConvertor').on('hidden.bs.modal', function (e) {
-        $("#new_currency").empty();
-    });
+    var ticketView = {
+    dashboard_url: '<?= base_url('dashboard') ?>',
+    user_id: <?= $this->user_id ?>,
+    project_id: <?= $this->project_id ?>,
+    tid: <?= $result['ticket_id'] ?>,
+    closeid: '<?= $closedid ?>',
+    dashboard_location: '<?= base_url($this->url . '/dashboard') ?>',
+    tracker_url: '<?= base_url('tracker') ?>',
+    result_id: <?= $result['id'] ?>,
+    track_timer: '<?= isset($track_stat) ? $track_stat : '' ?>',
+    stop_and_save_time: '<?= $this->lang_php['stop_and_save_time'] ?>',
+    clear_worked_time: '<?= $this->lang_php['clear_worked_time'] ?>',
+    timer_indicator: '<?= $this->project_abbr . '-' . $result['ticket_id'] ?>',
+    started_timers_href: '<?= base_url($this->url . '/view/' . $this->project_abbr . '-' . $result['ticket_id']) ?>',
+    started_on: '<?= date(TICKETS_DATE_TYPE, time()) ?>',
+    project_abbr: '<?= $this->project_abbr . '-' . $result['ticket_id'] ?>',
+    watchers_url: '<?= base_url('watchers') ?>',
+    fullname: '<?= $this->fullname ?>',
+    assigntome_url: '<?= base_url('assigntome') ?>',
+    unwatch_word: '<?= $this->lang_php['unwatch'] ?>',
+    watch_word: '<?= $this->lang_php['watch'] ?>',
+    pph_c: '<?= $result['pph_c'] ?>',
+    currency_conv_url: '<?= base_url('currency_convertor') ?>'
+    };
 </script>
+<script src="<?= base_url('assets/js/ticketView.js') ?>"></script>
 <script src="<?= base_url('assets/js/bootstrap-datepicker.min.js') ?>"></script>

@@ -70,7 +70,8 @@ $actual_link = stripos($_SERVER['SERVER_PROTOCOL'], 'https') === true ? 'https:/
             <div id="wiki-tree">
                 <?php
 
-                function loop_tree($pages, $is_recursion = false) {
+                function loop_tree($pages, $is_recursion = false)
+                {
                     ?>
                     <ul class="<?= $is_recursion === true ? 'children' : 'parent' ?>">
                         <?php
@@ -285,70 +286,25 @@ $actual_link = stripos($_SERVER['SERVER_PROTOCOL'], 'https') === true ? 'https:/
     </div>
 </div>
 <script>
-    $(document).ready(function () {
-        $(".alert.top-20").css("margin-left", "270px");
-        $('.show-childrens').click(function () {
-            $(this).nextAll('.children').toggle(300, function () {
-                var isVisible = $(this).is(':visible');
-                if (isVisible) {
-                    $(this).prevAll('.show-childrens').empty().append('<i class="fa fa-chevron-down"></i>');
-                } else {
-                    $(this).prevAll('.show-childrens').empty().append('<i class="fa fa-chevron-right"></i>');
-                }
-            });
-        });
+    var wikiDisplay = {
+        share_content: '<?= $hash_link != null ? $hash_link : 'Link was broken!' ?>',
+        watchers_url: '<?= base_url('watchers') ?>',
+        user_id: <?= $this->user_id ?>,
+        p_id: <?= isset($_GET['viewPageId']) ? $_GET['viewPageId'] : 0 ?>,
+        watch_word: '<?= $this->lang_php['watch'] ?>',
+        unwatch_word: '<?= $this->lang_php['unwatch'] ?>',
+        page_move_url: '<?= base_url('page_move') ?>',
+        locat_href: '<?= base_url('wiki/' . $project_name) ?>'
+    };
+</script>
+<script src="<?= base_url('assets/js/wikiDisplay.js') ?>"></script>
+<script>
+$(document).ready(function () {
 <?php if (isset($_GET['viewPageId'])) { ?>
-            $("#p_" +<?= $_GET['viewPageId'] ?>).prev('a.show-childrens').empty().append('<i class="fa fa-chevron-down"></i>');
-            $("#p_" +<?= $_GET['viewPageId'] ?>).parents('ul').show();
-            $("#p_" +<?= $_GET['viewPageId'] ?>).parents('ul').prevAll('a.show-childrens').empty().append('<i class="fa fa-chevron-down"></i>');
-            $("#p_" +<?= $_GET['viewPageId'] ?>).next('ul').show();
+$("#p_" +<?= $_GET['viewPageId'] ?>).prev('a.show-childrens').empty().append('<i class="fa fa-chevron-down"></i>');
+$("#p_" +<?= $_GET['viewPageId'] ?>).parents('ul').show();
+$("#p_" +<?= $_GET['viewPageId'] ?>).parents('ul').prevAll('a.show-childrens').empty().append('<i class="fa fa-chevron-down"></i>');
+$("#p_" +<?= $_GET['viewPageId'] ?>).next('ul').show();
 <?php } ?>
-
-        $("#share-me").popover({
-            title: '<h4>' + lang.share_link + '</h4>',
-            content: '<?= $hash_link != null ? $hash_link : 'Link was broken!' ?>',
-            template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content share-link-content"></div></div>',
-            html: true,
-            placement: 'left'
-        });
-    });
-
-    function watcher(status) {
-        $.ajax({
-            type: "POST",
-            url: "<?= base_url('watchers') ?>",
-            data: {status: status, u_id: <?= $this->user_id ?>, p_id:<?= isset($_GET['viewPageId']) ? $_GET['viewPageId'] : 0 ?>}
-        }).done(function (data) {
-            if (data == 0) {
-                alert(lang.watchers_problem);
-            }
-        });
-    }
-
-    $('#watch-status').click(function () {
-        var text = $("#watch-stat").text();
-        if (text == '<?= $this->lang_php['unwatch'] ?>') {
-            $("#watch-stat").text('<?= $this->lang_php['watch'] ?>');
-            watcher('delete');
-        } else if (text == '<?= $this->lang_php['watch'] ?>') {
-            $("#watch-stat").text('<?= $this->lang_php['unwatch'] ?>');
-            watcher('add');
-        }
-    });
-
-    $('#pageMove .move-page').click(function () {
-        var parent = $('[name="sub_for_move"]').val();
-        var space = $('[name="for_space_move"]').val();
-        $.ajax({
-            type: "POST",
-            url: "<?= base_url('page_move') ?>",
-            data: {parent: parent, space: space, page_id:<?= isset($_GET['viewPageId']) ? $_GET['viewPageId'] : 0 ?>}
-        }).done(function (data) {
-            if (data == 0) {
-                $("#move-result").empty().show().append(lang.page_move_problem);
-            } else {
-                location.href = '<?= base_url('wiki/' . $project_name) ?>';
-            }
-        });
-    });
+});
 </script>

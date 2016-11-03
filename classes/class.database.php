@@ -888,9 +888,9 @@ UNION
     public function getWikiActivityStream($project_id, $limit_from = 0, $limit_to = 10) {
 
         if ($project_id == 0) {
-            $w_proj = "WHERE for_account=" . ACCOUNT_ID;
+            $w_proj = "WHERE log_wiki.for_account=" . ACCOUNT_ID;
         } else {
-            $w_proj = "WHERE log_wiki.project_id = $project_id AND for_account=" . ACCOUNT_ID;
+            $w_proj = "WHERE log_wiki.project_id = $project_id AND log_wiki.for_account=" . ACCOUNT_ID;
         }
 
         $arr = array();
@@ -1476,9 +1476,12 @@ UNION
         $content = $post['content_edit_p'];
         $update_from = $this->user_id;
 
+        $title = $post['title'];
+        if(mb_strlen($title) < 3) {
+            return false;
+        }
         $this->query("INSERT INTO wiki_pages_updates (for_account, content, update_time, page_id, update_from, first, num) VALUES (" . ACCOUNT_ID . " ,'$content', '$update_time', '$id', '$update_from', $first, $lnum)");
         $last_inserted = $this->conn->insert_id;
-        $title = $post['title'];
         $this->query("UPDATE wiki_pages SET title = '$title', content = '$content' WHERE id = $id AND for_account=" . ACCOUNT_ID . " LIMIT 1");
         return $last_inserted;
     }
