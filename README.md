@@ -10,6 +10,12 @@ ITS (also trouble ticket system, support ticket, request management or incident 
 
 *It comes with easy users guide and developer documentation.*
 
+
+## Donate
+If this project help you reduce time to develop, you can give me a cup of coffee to continue its development. Thank you! :)
+[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GD32E7M9SJ8V4)
+
+
 *Translated into:* ![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/gr_flag.jpg "Cover")  ![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/bg_flag.jpg "Cover")  ![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/en_flag.jpg "Cover")
 ![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/fr_flag.jpg "Cover")
 
