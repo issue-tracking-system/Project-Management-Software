@@ -145,7 +145,7 @@ $currencies = $this->getCurrencies();
             <label class="control-label col-sm-2" for="assignee"><?= $this->lang_php['assignee'] ?></label>
             <div class="col-sm-10">
                 <select class="selectpicker form-control show-tick show-menu-arrow" name="assignee" id="assignee">
-                    <option></option>
+                    <option value="0"></option>
                     <?php foreach ($users as $user) { ?>
                         <option <?= isset($_POST['assignee']) && $_POST['assignee'] == $user['id'] ? 'selected' : '' ?> value="<?= $user['id'] ?>"><?= $user['fullname'] ?></option>
                     <?php } ?>

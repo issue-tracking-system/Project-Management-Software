@@ -395,6 +395,9 @@ class Database extends Mysql {
             $post['subject'] = mb_substr($post['subject'], 0, 200);
         }
         $post['estimated_seconds'] = strtotime($post['estimated_days'] . ' day ' . $post['estimated_hours'] . ' hour ' . $post['estimated_minutes'] . ' minute', 0);
+        if($post['estimated_seconds'] === false) {
+            $post['estimated_seconds'] = 0;
+        }
         unset($post['estimated_days']);
         unset($post['estimated_hours']);
         unset($post['estimated_minutes']);

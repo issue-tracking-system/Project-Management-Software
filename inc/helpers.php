@@ -98,10 +98,12 @@ function word_limiter($word, $limit_to, $start_from = 0) {
 }
 
 function secondsToTime($seconds, $want_array = false) {
-    if ($seconds < 0)
+    if ($seconds < 0) {
         $minus = '- ';
-    else
+    }
+    else {
         $minus = '';
+    }
     $dtF = new DateTime("@0");
     $dtT = new DateTime("@$seconds");
     if ($want_array === false) {
