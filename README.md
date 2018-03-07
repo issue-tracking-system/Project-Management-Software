@@ -23,7 +23,7 @@ If this project help you reduce time to develop, you can give me a cup of coffee
 + Upload files to your web server
 + Import DATABASE.sql to your database
 + Set database name, username, password for database to /inc/db.php
-+ START USING IT!
++ START USING IT! Login with username: admin and password: admin
 
 ### Used technologies 
 + PHP
