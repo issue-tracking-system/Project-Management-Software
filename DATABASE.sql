@@ -311,7 +311,7 @@ CREATE TABLE IF NOT EXISTS `wiki_pages` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `for_account` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
-  `content` longtext NOT NULL,
+  `content` longtext DEFAULT NULL,
   `sub_for` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'This page is sub page for [page_id]',
   `for_space` int(10) unsigned NOT NULL COMMENT 'Id of space for this page',
   `category` int(10) unsigned NOT NULL COMMENT 'template id',

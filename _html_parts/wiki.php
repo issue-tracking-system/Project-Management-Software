@@ -130,11 +130,11 @@ $notif_num = $notifications < MAX_NUM_NOTIF ? $notifications : MAX_NUM_NOTIF . '
         </div>
     </nav>
     <script>
-    var urlsWiki = {
-        notifications_wiki: '<?= base_url('notifications_wiki') ?>',
-        project_id: <?= $this->project_id ?>,
-        user_id: <?= $this->user_id ?>
-    };
+        var urlsWiki = {
+            notifications_wiki: '<?= base_url('notifications_wiki') ?>',
+            project_id: <?= $this->project_id ?>,
+            user_id: <?= $this->user_id ?>
+        };
     </script>
     <script src="<?= base_url('assets/js/wikiNotifications.js') ?>"></script>
     <div class="container-fluid">
@@ -149,7 +149,7 @@ $notif_num = $notifications < MAX_NUM_NOTIF ? $notifications : MAX_NUM_NOTIF . '
         }
         ?>
     </div>
-    <!-- Modal Create Button -->
+    <!-- Modal Create Page -->
     <div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -184,7 +184,6 @@ $notif_num = $notifications < MAX_NUM_NOTIF ? $notifications : MAX_NUM_NOTIF . '
                                     </ul>
                                 </div>
                             </div>
-
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="step-s-space">
                                     <label><?= $this->lang_php['select_space'] ?></label>
@@ -243,12 +242,12 @@ $notif_num = $notifications < MAX_NUM_NOTIF ? $notifications : MAX_NUM_NOTIF . '
         </div>
     </div>
     <script>
-    var generalWiki = {
-        parent_suggestions: '<?= base_url('parent_suggestions') ?>',
-        project_id: <?= $this->project_id ?>,
-        wiki_search: '<?= base_url('wiki_search') ?>',
-        project_name: '<?= $project_name ?>'
-    };
+        var generalWiki = {
+            parent_suggestions: '<?= base_url('parent_suggestions') ?>',
+            project_id: <?= $this->project_id ?>,
+            wiki_search: '<?= base_url('wiki_search') ?>',
+            project_name: '<?= $project_name ?>'
+        };
     </script>
     <script src="<?= base_url('assets/js/wiki.js') ?>"></script>
 </div>
