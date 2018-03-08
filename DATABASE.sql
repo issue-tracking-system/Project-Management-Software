@@ -72,6 +72,9 @@ CREATE TABLE IF NOT EXISTS `default_language` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
+INSERT INTO `default_language` (`id`, `for_account`, `abbr`) VALUES
+(1, 1, 'EN');
+
 CREATE TABLE IF NOT EXISTS `login_image` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `for_account` int(11) NOT NULL,
