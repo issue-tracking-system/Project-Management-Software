@@ -180,7 +180,7 @@ CREATE TABLE IF NOT EXISTS `started_track_times` (
   `ticket_id` int(11) NOT NULL,
   `started` int(11) NOT NULL,
   `status` varchar(255) NOT NULL,
-  `paused_on` int(11) NOT NULL,
+  `paused_on` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='currently working trackers for time' AUTO_INCREMENT=1 ;
 

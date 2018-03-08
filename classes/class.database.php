@@ -650,7 +650,7 @@ class Database extends Mysql {
         } else {
             $and_where = '';
         }
-        $sum = $this->query("SELECT IF(to_time=0, 0, SUM(to_time)-SUM(from_time)) as removetimes FROM paused_trackings WHERE for_id = $track_id $and_where UNION SELECT started FROM started_track_times WHERE ticket_id = $ticket_id AND user_id = $user_id AND for_account=" . ACCOUNT_ID);
+        $sum = $this->query("SELECT IF(to_time=0, 0, SUM(to_time)-SUM(from_time)) as removetimes FROM paused_trackings WHERE for_id = $track_id $and_where GROUP BY to_time UNION SELECT started FROM started_track_times WHERE ticket_id = $ticket_id AND user_id = $user_id AND for_account=" . ACCOUNT_ID);
         $worked = time();
         while ($row = $sum->fetch_assoc()) {
             $worked = $worked - $row['removetimes'];
