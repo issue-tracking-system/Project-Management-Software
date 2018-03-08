@@ -301,8 +301,8 @@ CREATE TABLE IF NOT EXISTS `watchers` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `for_account` int(11) NOT NULL,
   `user_id` int(10) unsigned NOT NULL,
-  `ticket_id` int(10) unsigned NOT NULL,
-  `page_id` int(11) unsigned NOT NULL,
+  `ticket_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `page_id` int(11) UNSIGNED NOT NULL DEFAULT '0',
   `start_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'time that is started watching',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
