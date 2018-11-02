@@ -786,7 +786,7 @@ $projects_list = $this->getProjects();
                                                 <input type="hidden" value="0" name="new-prof">
                                                 <input class="form-control" id="add-new-prof-field" name="new-prof-name" style="display:none;" type="text" value="">
                                                 <select class="form-control" name="prof" id="prof-list">
-                                                    <option></option>
+                                                    <option value="0" selected="selected"></option>
                                                     <?php foreach ($professions as $prof) { ?>
                                                         <option value="<?= $prof['id'] ?>"><?= $prof['name'] ?></option>
                                                     <?php } ?>
