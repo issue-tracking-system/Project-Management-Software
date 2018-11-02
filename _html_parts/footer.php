@@ -18,7 +18,6 @@ if (isset($_SESSION['logged']) || isset($_COOKIE['logged'])) {
 <script src="<?= base_url('assets/bootstrap-select-1.9.4/js/i18n/defaults-en_US.min.js') ?>"></script>
 <script src="<?= base_url('assets/js/bootstrap.min.js') ?>"></script>
 <script src="<?= base_url('assets/js/placeholders.min.js') ?>"></script>
-<script src="http://pmticket.com/assets/js/analitycs.js"></script>
 <script>
     $(function () {
         $('[data-toggle="popover"]').popover();
