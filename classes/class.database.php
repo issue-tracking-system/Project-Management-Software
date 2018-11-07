@@ -1096,7 +1096,7 @@ UNION
             $em_arr = $em->fetch_assoc();
             $email = $em_arr['email'];
             $this->query("DELETE FROM pass_resets WHERE email = '$email' AND for_account=" . ACCOUNT_ID);
-            $this->query("DELETE FROM users WHERE user = $id AND for_account=" . ACCOUNT_ID);
+            $this->query("DELETE FROM users WHERE id = $id AND for_account=" . ACCOUNT_ID);
         }
     }
 
