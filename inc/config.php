@@ -32,7 +32,8 @@ $CONFIG['DEFAULT_USER_TYPES'] = array(//MUST BE SORTED! <
 );
 
 /*
- * ACCOUNT_DOMAIN comes from class.subdomain
+ * ACCOUNT_DOMAIN constant is defined in class.subdomain.php
+ * If is not enabled subdomain support, it is defined in index.php
  */
 $CONFIG['USERNAMEREGEX'] = '/^[a-zа-яA-ZА-Я0-9]+$/'; //REGISTRATION REGEX
 $CONFIG['FULLNAMEREGEX'] = '/^[a-zа-яA-ZА-Я\s]+$/'; //REGISTRATION REGEX

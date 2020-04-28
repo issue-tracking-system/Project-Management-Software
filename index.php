@@ -1,17 +1,25 @@
 <?php
 
 /*
- * pmTicket.com
- * Created by Kiril Kirkov
+ * @author Kiril Kirkov
+ * https://github.com/issue-tracking-system/Project-Management-Software
  */
+
 session_start();
 define('APPLICATION_LOADED', true);
+define('HAS_SUBDOMAIN_SUPPORT', false);
 
+if(!HAS_SUBDOMAIN_SUPPORT) {
+    define('ACCOUNT_DOMAIN', 'global');
+    define('COMPANY_NAME', 'Issue Tracking System');
+}
 require_once 'inc/db.php';
 require_once 'classes/class.main.php';
-//require_once 'classes/class.subdomain.php';  ~REMOVE SUBDOMAIN SUPPORT
-
-define('ACCOUNT_ID', '1'); //If using without multiaccounts
+if(HAS_SUBDOMAIN_SUPPORT) {
+    require_once 'classes/class.subdomain.php';
+} else {
+    define('ACCOUNT_ID', '1');
+}
 
 if (DEBUG_MODE === false) {
     error_reporting(E_ALL ^ E_NOTICE | E_WARNING);
@@ -36,4 +44,3 @@ try {
         include '_html_parts/exeption_page.php';
     }
 }
-?>

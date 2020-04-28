@@ -20,7 +20,7 @@ class Subdomain {
     public function __construct() {
         $subDomain = explode('.', $_SERVER['HTTP_HOST']);
         if (count($subDomain) < 3) {
-            header('Location: http://pmticket.com'); //Check that we have subdomain in url
+            header('Location: http://'.$_SERVER['HTTP_HOST']); //Check that we have subdomain in url
         } else {
             $this->domain = $subDomain[0];
             $this->checkFirm();
@@ -46,7 +46,7 @@ class Subdomain {
             define('ACCOUNT_ID', $obj->id);
             define('ACCOUNT_DOMAIN', $obj->domain);
         } else {
-            header('Location: http://pmticket.com');
+            header('Location: http://'.$_SERVER['HTTP_HOST']);
         }
         unset($this->db);
     }

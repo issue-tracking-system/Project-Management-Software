@@ -12,6 +12,9 @@ class Mysql {
 
     public function __construct() {
         $ms = microtime(true);
+        if(!class_exists('mysqli')) {
+            throw new Exception("No MYSQLi extension");
+        }
         $this->conn = new mysqli(HOST, USER, PASS, DATABASE);
         if ($this->conn->connect_error) {
             throw new Exception("MySQL connection failed: " . $this->conn->connect_error);
