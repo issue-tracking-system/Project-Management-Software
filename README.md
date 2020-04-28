@@ -4,12 +4,16 @@
 
 # ![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/its.png "Cover")
 
-#### Fast, Clean, Responsive, Multilanguage, Email Syncing, etc.
+#### Fast, Clean, Responsive, Multilanguage, Email Syncing, Subdomain support, etc.
 
-ITS (also trouble ticket system, support ticket, request management or incident ticket system) is a web based computer software, that manages and maintains lists of issues, as needed by an organization. Issue tracking systems are commonly used in an organization's customer support call center or development work tracking to create, update, and resolve reported customer/developer issues, or even issues reported by that organization's other employees.It also contains a knowledge base/wikipedia containing information on each customer, resolutions to common problems, and other such data. An issue tracking system is similar to a "bugtracker", and often, a software company will sell both, and some bugtrackers are capable of being used as an issue tracking system, and vice versa. Consistent use of an issue or bug tracking system is considered one of the "hallmarks of a good software team".
+<p>
+No PHP Frameworks used.
+</p>
+
+<p>ITS (also trouble ticket system, support ticket, request management or incident ticket system) is a web based computer software, that manages and maintains lists of issues, as needed by an organization. Issue tracking systems are commonly used in an organization's customer support call center or development work tracking to create, update, and resolve reported customer/developer issues, or even issues reported by that organization's other employees.It also contains a knowledge base/wikipedia containing information on each customer, resolutions to common problems, and other such data. An issue tracking system is similar to a "bugtracker", and often, a software company will sell both, and some bugtrackers are capable of being used as an issue tracking system, and vice versa. Consistent use of an issue or bug tracking system is considered one of the "hallmarks of a good software team".
+</p>
 
 *It comes with easy users guide and developer documentation.*
-
 
 ## Donate
 If this project help you reduce time to develop, you can give me a cup of coffee to continue its development. Thank you! :)
@@ -51,8 +55,7 @@ If this project help you reduce time to develop, you can give me a cup of coffee
 + Easy to understand documentation of all source code for developers and User Guide
 
 ### Included tools:
-+ Login page
-+ Home Page
++ Have support of mutiple projects and users permissions.
 + Account system for user management
 + Issue activity stream
 + Creating issues
@@ -91,7 +94,7 @@ If this project help you reduce time to develop, you can give me a cup of coffee
 ### Requirements
 + MySQL 4.1.1+
 + PHP 5.3.2+
-+ a webserver (e.g. Apache or IIS)
++ a webserver (eg. Apache or IIS)
 
 ### Screenshots
 ![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/create-a-page.png "Logo Title Text 1")
