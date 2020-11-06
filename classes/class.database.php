@@ -981,6 +981,9 @@ UNION
     public function setProfession($name) {
         $name = $this->escape($name);
         $result = $this->query("SELECT id FROM professions WHERE name = '$name' for_account=" . ACCOUNT_ID);
+        if(!$result) {
+            return null;
+        }
         $result = $result->fetch_row();
         if ($result[0] == null) {
             $this->query("INSERT INTO professions (name, for_account) VALUES ('$name', " . ACCOUNT_ID . ")");
