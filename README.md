@@ -4,6 +4,10 @@
 
 # ![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/its.png "Cover")
 
+<h1 align="center">
+<a href="https://codecanyon.net/item/agile-scrum-project-issue-management/36720961">Now Available As WordPress Plugin</a>
+</h1>
+
 #### Fast, Clean, Responsive, Multilanguage, Email Syncing, Subdomain support, etc.
 
 <p>
@@ -101,6 +105,11 @@ No PHP Frameworks used.
 + MySQL 4.1.1+
 + PHP 5.3.2+
 + a webserver (eg. Apache or IIS)
+
+
+<h2 align="center">
+<a href="https://codecanyon.net/item/agile-scrum-project-issue-management/36720961">Download For WordPress</a>
+</h2>
 
 ### Screenshots
 ![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/create-a-page.png "Logo Title Text 1")
