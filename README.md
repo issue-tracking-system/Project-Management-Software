@@ -8,8 +8,6 @@
 <a href="https://codecanyon.net/item/agile-scrum-project-issue-management/36720961">Download Available As WordPress Plugin</a>
 </h1>
 
-<p>WordPress Asana Integration available</p>
-
 #### Fast, Clean, Responsive, Multilanguage, Email Syncing, Subdomain support, etc.
 
 <p>
