@@ -4,6 +4,10 @@
 
 # ![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/its.png "Cover")
 
+<h1 align="center">
+<a href="https://codecanyon.net/item/agile-scrum-project-issue-management/36720961">Download Available As WordPress Plugin</a>
+</h1>
+
 #### Fast, Clean, Responsive, Multilanguage, Email Syncing, Subdomain support, etc.
 
 <p>
@@ -16,9 +20,15 @@ No PHP Frameworks used.
 *It comes with easy users guide and developer documentation.*
 
 ## Donate
-If this project help you reduce time to develop, you can give me a cup of coffee to continue its development. Thank you! :)
-[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GD32E7M9SJ8V4)
+<p>If this project help you reduce time to develop, you can give me a cup of coffee to continue its development. Thank you! :)</p>
 
+[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate/?hosted_button_id=GD32E7M9SJ8V4)
+
+<p><b>BTC Address:</b> 3Qwge1rMAqb7ko3g6AeJraV4ms1pDu2pFd</p>
+
+![alt text](https://raw.githubusercontent.com/kirilkirkov/Shopping-Cart-Solution-CodeIgniter/master/github/btc.png "Bitcoin address")
+
+### Translations
 
 *Translated into:* ![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/gr_flag.jpg "Cover")  ![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/bg_flag.jpg "Cover")  ![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/en_flag.jpg "Cover")
 ![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/fr_flag.jpg "Cover")
@@ -95,6 +105,11 @@ If this project help you reduce time to develop, you can give me a cup of coffee
 + MySQL 4.1.1+
 + PHP 5.3.2+
 + a webserver (eg. Apache or IIS)
+
+
+<h2 align="center">
+<a href="https://codecanyon.net/item/agile-scrum-project-issue-management/36720961">Download For WordPress</a>
+</h2>
 
 ### Screenshots
 ![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/create-a-page.png "Logo Title Text 1")
