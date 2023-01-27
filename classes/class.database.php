@@ -67,7 +67,7 @@ class Database extends Mysql {
 
     public function getLoginImage() {
         $result = $this->query("SELECT image FROM login_image WHERE for_account=" . ACCOUNT_ID . " LIMIT 1");
-        if ($result !== false) {
+        if ($result !== false && $result->num_rows > 0) {
             $arr = $result->fetch_row();
             return $arr[0];
         } else {
