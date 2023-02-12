@@ -26,8 +26,6 @@ No PHP Frameworks used.
 
 <p><b>BTC Address:</b> 3FmdTVWCApEcHT6wmrSCFkUSqaowsaqS9Y</p>
 
-![alt text](https://raw.githubusercontent.com/kirilkirkov/Shopping-Cart-Solution-CodeIgniter/master/github/btc.png "Bitcoin address")
-
 ### Translations
 
 *Translated into:* ![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/gr_flag.jpg "Cover")  ![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/bg_flag.jpg "Cover")  ![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/en_flag.jpg "Cover")
