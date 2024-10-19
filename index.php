@@ -26,16 +26,13 @@ if (DEBUG_MODE === false) {
 }
 
 try {
-    $main = new Main();
-
-    if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-        $main->run($_GET['page'], true);
-    } else {
-        if (!isset($_GET['page'])) {
-            $_GET['page'] = 'login';
-        }
-        $main->run($_GET['page']);
+    
+    if (!isset($_GET['page'])) {
+        $_GET['page'] = 'login';
     }
+    $main = new Main();
+    $main->run($_GET['page'], !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest');
+
 } catch (Exception $e) {
     if (DEBUG_MODE === true) {
         echo 'New Exception: ' . $e->getMessage();

@@ -28,6 +28,20 @@ class Main extends Database {
     public $user_lang = NULL;
     public $url;
 
+    public $dash_filter;
+    public $social;
+    public $username;
+    public $fullname;
+    public $image;
+    public $permissions;
+    public $profession;
+    public $email;
+    public $email_notif;
+    public $user_id;
+    public $user_name;
+    public $lastMessageId;
+    public $serialized_send_files;
+
     public function __construct() {
         parent::__construct();
     }
