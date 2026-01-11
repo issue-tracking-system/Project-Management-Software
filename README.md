@@ -24,8 +24,6 @@ No PHP Frameworks used.
 
 [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate/?hosted_button_id=GD32E7M9SJ8V4)
 
-<p><b>BTC Address:</b> 3FmdTVWCApEcHT6wmrSCFkUSqaowsaqS9Y</p>
-
 ### Translations
 
 *Translated into:* ![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/gr_flag.jpg "Cover")  ![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/bg_flag.jpg "Cover")  ![alt text](https://raw.githubusercontent.com/issue-tracking-system/pmTicket/master/screenshots/en_flag.jpg "Cover")
